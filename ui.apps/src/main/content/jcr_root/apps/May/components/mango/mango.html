@@ -1,11 +1,14 @@
-<div data-sly-use.model = com.adobe.aem.may.batch.core.models.DemoClass>
+<div data-sly-use.model = com.adobe.aem.may.batch.core.models.MangoParent>
 
-<h1> ${model.title} </h1>
-<br>
-<h1> ${model.description } </h1>
-<br>
-<h1> ${model.number} </h1>
-<br>
+    ${model.text}  <br>
+    ${model.des}   <br>
+    ${model.num} <br>
 
-</div>
+    <div data-sly-list.item=${model.bookdetailswithmap}>
 
+    ${item.bookname} <br>
+    ${item.bookdes}  <br>
+    ${item.booknum}  <br>
+    ${ 'dd-MM-yyyy' @ format=item.bookpublishdate}
+ </div>
+  </div>

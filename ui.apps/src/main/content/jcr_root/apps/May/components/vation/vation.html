@@ -1,6 +1,27 @@
-<h3> ${properties.text} </h3>
-<br>
-<h3> ${properties.description } </h3>
-<br>
-<h3> ${properties.number} </h3>
-<br>
+<div data-sly-use.model = com.adobe.aem.may.batch.core.models.VationParent>
+
+    ${model.text}  <br>
+    ${model.des}   <br>
+    ${model.num} <br>
+
+    <div data-sly-list.item=${model.bookdetailswithmap}>
+
+    ${item.bookname} <br>
+    ${item.bookdes}  <br>
+    ${item.booknum}  <br>
+
+   <h2>${ 'dd-MM-yyyy' @ format=item.bookpublishdate}</h2>
+
+    <div data-sly-list.item1=${item.bookdetailswithwriter}>
+
+     ${item1.writername} <br>
+    ${item1.writerinfo}  <br>
+    ${item1.writernum}  <br>
+   <h2>${ 'dd-MM-yyyy' @ format=item1.writerdob}</h2>
+
+    </div>
+
+
+
+
+    </div>
