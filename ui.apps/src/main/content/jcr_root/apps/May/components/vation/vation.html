@@ -9,19 +9,64 @@
     ${item.bookname} <br>
     ${item.bookdes}  <br>
     ${item.booknum}  <br>
-
-   <h2>${ 'dd-MM-yyyy' @ format=item.bookpublishdate}</h2>
+    ${ 'dd-MM-yyyy' @ format=item.bookpublishdate}<br>
 
     <div data-sly-list.item1=${item.bookdetailswithwriter}>
 
      ${item1.writername} <br>
     ${item1.writerinfo}  <br>
     ${item1.writernum}  <br>
-   <h2>${ 'dd-MM-yyyy' @ format=item1.writerdob}</h2>
+    ${ 'dd-MM-yyyy' @ format=item1.writerdob}<br>
+</div>
+</div>
+</div>
 
-    </div>
+<h2>JavaScript  message </h2>
+
+<button class="button" onclick="myFunction()">Click</button>
 
 
 
 
-    </div>
+<h2> HTL </h2></br>
+
+
+<h6>  test </h6>
+<div data-sly-test="${properties.checkbox}">
+    <h2>this is checkbox validation</h2>
+</div>
+
+<h6>Include  </h6>
+<div data-sly-include="vation1.html"></div>
+
+
+<h6>resource </h6>
+<div data-sly-resource="${helloworld @resourceType='May/components/helloworld'}"></div>
+
+<h6>List</h6>
+<div data-sly-set.items="${['A','B','C','D']}"></div>
+
+<ol data-sly-list="${items}">
+
+     <li> ${item}</li>
+</ol>
+
+<h6>repeat</h6>
+<ol data-sly-repeat="${items}">
+
+     <li> ${item}</li>
+</ol>
+
+
+<div data-sly-template.mahesh="${@val1,val2,val3,val4,val5}">
+
+      <h1>${val1}</h1>
+      <h1>${val2}</h1>
+      <h1>${val3}</h1>
+       <h1>${val4}</h1>
+        <h1>${val5}</h1>
+
+</div>
+
+<h6>call HTL check</h6>
+<div data-sly-call="${mahesh @ val1='10',val2='20',val3='30',val4='40',val5='50'}"></div>
